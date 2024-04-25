@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <link rel="stylesheet" type="text/css" href="register.css">
+    <link rel="icon" href="images/4.png">
+</head>
+<body>
+    <div class="container">
+        <center> 
+        <h2>Registration Form</h2>
+        <form action="re.html" method="GET">
+            <label for="fname">First Name:</label><br>
+            <input type="text" id="fname" name="fname" required><br>
+            <label for="lname">Last Name:</label><br>
+            <input type="text" id="lname" name="lname" required><br>
+            <label for="adhar">Adhar Number:</label><br>
+            <input type="text" id="adhar" name="adhar" pattern="[0-9]{12}" required><br>
+
+            <label for="email">Email:</label><br>
+            <input type="email" id="email" name="email" required><br>
+            <label for="password">Password:</label><br>
+            <input type="password" id="password" name="password" required><br>
+            <label for="confirm_password">Confirm Password:</label><br>
+            <input type="password" id="confirm_password" name="confirm_password" required><br>
+            
+            <input type="submit" value="Submit">
+        </form>
+        </center>
+    </div>
+    <script>
+        document.getElementById('confirm_password').addEventListener('input', function() {
+            if (document.getElementById('confirm_password').value !== document.getElementById('password').value) {
+                document.getElementById('confirm_password').setCustomValidity('Passwords do not match');
+            } else {
+                document.getElementById('confirm_password').setCustomValidity('');
+            }
+        });
+    </script>
+</body>
+</html>
